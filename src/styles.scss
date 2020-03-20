@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: #c6c6c6;
+}
+header {
+  h1 {
+    margin: 0;
+  }
+  .logo {
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+    align-items: center;
+  }
+  .spacer {
+    width: 1px;
+    display: block;
+    height: 70%;
+    margin: 0 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+main {
+  flex: auto;
+  padding: 10px 20px;
+}
+
+footer {
+  background: #3f51b5;
+  color: #ffffff;
+  padding: 0 10px;
+  line-height: 20px;
+  font-size: 12px;
+}
