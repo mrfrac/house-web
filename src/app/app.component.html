@@ -1,0 +1,25 @@
+<header>
+  <mat-toolbar color="primary">
+    <a routerLink="/" class="logo">
+      <mat-icon>home</mat-icon>
+      <h1>Household</h1>
+    </a>
+    <span class="spacer"></span>
+    <div class="user-info" *ngIf="getUser() | async">
+      <mat-icon>person</mat-icon>
+      {{ (getUser() | async)?.displayName }}
+      <button mat-icon-button (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+</header>
+<main>
+  <router-outlet *ngIf="getUser() | async as user; else showLogin"></router-outlet>
+  <ng-template #showLogin>
+    <button mat-stroked-button (click)="login()">Login with Google</button>
+  </ng-template>
+</main>
+<footer>
+  &copy; {{ year }}
+</footer>

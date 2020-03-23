@@ -1,26 +1,28 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <header>
-      <mat-toolbar color="primary">
-          <a routerLink="/" class="logo">
-              <mat-icon>home</mat-icon>
-              <h1>Household</h1>
-          </a>
-          <span class="spacer"></span>
-      </mat-toolbar>
-    </header>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-    <footer>
-      &copy; {{ year }}
-    </footer>
-  `,
+  templateUrl: './app.component.html',
   styles: []
 })
 export class AppComponent {
-  year = new Date().getFullYear();
+  public year = new Date().getFullYear();
+  public user: firebase.User = null;
+
+  constructor(private readonly auth: AngularFireAuth) { }
+
+  public getUser(): Observable<firebase.User> {
+    return this.auth.user;
+  }
+
+  public login() {
+    this.auth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  }
+
+  public logout() {
+    this.auth.auth.signOut();
+  }
 }

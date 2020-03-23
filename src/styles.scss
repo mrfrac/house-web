@@ -27,6 +27,17 @@ header {
     margin: 0 20px;
     background-color: rgba(255, 255, 255, 0.5);
   }
+  .user-info {
+    display: block;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    .mat-icon {
+        margin-right: 5px;
+    }
+    position: absolute;
+    right: 0px;
+  }
 }
 
 main {
