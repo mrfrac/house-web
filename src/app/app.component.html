@@ -4,21 +4,17 @@
       <mat-icon>home</mat-icon>
       <h1>Household</h1>
     </a>
+    <span class="divider"></span>
     <span class="spacer"></span>
-    <div class="user-info" *ngIf="getUser() | async">
-      <mat-icon>person</mat-icon>
-      {{ (getUser() | async)?.displayName }}
-      <button mat-icon-button (click)="logout()">
-        <mat-icon>exit_to_app</mat-icon>
-      </button>
-    </div>
+    <app-user-panel class="user-info"></app-user-panel>
   </mat-toolbar>
 </header>
 <main>
-  <router-outlet *ngIf="getUser() | async as user; else showLogin"></router-outlet>
-  <ng-template #showLogin>
-    <button mat-stroked-button (click)="login()">Login with Google</button>
-  </ng-template>
+  <mat-card>
+    <mat-card-content>
+      <router-outlet></router-outlet>
+    </mat-card-content>
+  </mat-card>
 </main>
 <footer>
   &copy; {{ year }}

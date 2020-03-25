@@ -10,10 +10,12 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { UserPanelComponent } from './components/user-panel/user-panel.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserPanelComponent,
   ],
   imports: [
     BrowserModule,
