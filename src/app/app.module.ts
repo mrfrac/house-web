@@ -11,11 +11,13 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { UserPanelComponent } from './components/user-panel/user-panel.component';
+import { MenuPanelComponent } from './components/menu-panel/menu-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserPanelComponent,
+    MenuPanelComponent,
   ],
   imports: [
     BrowserModule,

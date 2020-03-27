@@ -4,15 +4,19 @@ import { FirestoreExampleComponent } from './components/firestore-example/firest
 import { MaterialModule } from './material.module';
 import { CommonModule } from '@angular/common';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ItemsListComponent } from './components/items-list/items-list.component';
+// import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 
 const routes: Routes = [
-  { path: "", component: FirestoreExampleComponent },
+  { path: '', component: FirestoreExampleComponent, /* canActivate: [AngularFireAuthGuard] */ },
+  { path: 'items', component: ItemsListComponent, }
 ];
 
 @NgModule({
   declarations: [
     FirestoreExampleComponent,
+    ItemsListComponent,
   ],
   imports: [
     CommonModule,

@@ -8,7 +8,7 @@ import { auth } from 'firebase';
   selector: 'app-user-panel',
   template: `
     <div class="user-info">
-      <div *ngIf="user; else showLogin">
+      <div *ngIf="user; else showLogin" class="user-info">
         <mat-icon>person</mat-icon>
         {{ user?.displayName }}
         <button mat-icon-button (click)="logout()">
